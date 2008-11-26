@@ -16,10 +16,12 @@ eval {
   alarm 0;
 };
 
-if ($aws_access_key_id && $secret_access_key) {
+if ($aws_access_key_id && length $aws_access_key_id &&
+	$secret_access_key && length $secret_access_key) {
   eval 'use Test::More tests => 2;';
 } else {
-  eval 'use Test::More plan skip_all => "Need AWS access key ID and secret access key for testing, skipping"';
+  eval 'use Test::More; plan skip_all => "Need AWS access key ID and secret access key for testing, skipping"';
+  exit;
 }
 
 use_ok("Net::Amazon::ATS");
