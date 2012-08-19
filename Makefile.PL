@@ -5,7 +5,8 @@ WriteMakefile(
 	'NAME'		=> 'Net::Amazon::ATS',
 	'VERSION_FROM'	=> 'lib/Net/Amazon/ATS.pm',
 	'PREREQ_PM'		=> {
-				'IO::Prompt'	=> 0,
+				'IO::Prompt'		=> 0,
+				'Test::Exception'	=> 0,
 			},
 	ABSTRACT_FROM => 'lib/Net/Amazon/ATS.pm',
 	AUTHOR		=> 'Shevek <cpan@anarres.org>',
